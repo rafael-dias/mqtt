@@ -5,7 +5,7 @@
         <div class="row">
             <!-- 🖼️ Lado esquerdo: imagem -->
             <div class="col-md-5 position-relative mb-5">
-                <img src="/barril.jpeg" alt="Imagem do tanque" class="img-fluid rounded shadow-sm" />
+                <img src="./barril.jpeg" alt="Imagem do tanque" class="img-fluid rounded shadow-sm" />
 
                 <input type="text" v-model="temperatura_atual" placeholder="Temperatura atual"
                     class="form-control position-absolute"
