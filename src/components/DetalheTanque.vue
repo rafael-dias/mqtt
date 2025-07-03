@@ -5,11 +5,12 @@
         <div class="row">
             <!-- 🖼️ Lado esquerdo: imagem -->
             <div class="col-md-5 position-relative mb-5">
-                <img src="./barril.jpeg" alt="Imagem do tanque" class="img-fluid rounded shadow-sm" />
-
+                <img :src="barrilImg" alt="Imagem do tanque" class="img-fluid rounded shadow-sm" />
+                <span class=" position-absolute"
+                     style=" color: white; top: 50%; left: 30%; transform: translate(-20%, -300%); width: 60%;">Temperatura Atual</span>
                 <input type="text" v-model="temperatura_atual" placeholder="Temperatura atual"
                     class="form-control position-absolute"
-                    style="top: 50%; left: 55%; transform: translate(-50%, -80%); width: 30%;" />
+                    style="top: 50%; left: 30%; transform: translate(-50%, -90%); width: 30%;" />
             </div>
 
 
@@ -105,7 +106,7 @@
                             <div class="rounded-circle" :class="controleTemperaturaLigado ? 'bg-success' : 'bg-danger'"
                                 style="width: 16px; height: 16px;"></div>
                             <span>Controle de Temperatura {{ controleTemperaturaLigado ? 'Ligado' : 'Desligado'
-                            }}</span>
+                                }}</span>
                         </div>
 
                         <div class="col-md-4 d-flex align-items-center gap-2">
@@ -145,6 +146,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 
 import mqtt from 'mqtt'
+
+import barrilImg from '../assets/fermentador.png'
 
 const mqttLigado = ref(false)
 const controleTemperaturaLigado = ref(false)
